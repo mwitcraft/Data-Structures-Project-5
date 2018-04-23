@@ -4,6 +4,11 @@
 using namespace std;
 
 int main(){
+	clock_t start, end;
+	double cpu_time_used;
+
+	start = clock();
+
 	srand((unsigned)time(0));
 
 	int rando;
@@ -12,4 +17,9 @@ int main(){
 		rando = rand() % 100;
 		cout << i << ": " << rando << endl;
 	}
+
+	end = clock();
+	cpu_time_used = ((double) (end - start));
+
+	cout << "TIME: " << cpu_time_used << endl;
 }
