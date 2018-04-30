@@ -7,19 +7,23 @@ void heapify(int* arr, int size, int index){
 	int left = 2*index + 1; 
 	int right = 2*index + 2;
 
+	//If left child if greater than the largest
 	if (left < size && arr[left] > arr[largest]){
 		largest = left;
 	}
 
+	//If right child is greater than the largest
 	if (right < size && arr[right] > arr[largest]){
 		largest = right;
 	}
 
+	//If one of the childs are greater than the largest, it becomes the new largest
 	if (largest != index){
 		int temp = arr[index];
 		arr[index] = arr[largest];
 		arr[largest] = temp;
 
+		//Called recursively to organize max heap
 		heapify(arr, size, largest);
 	}
 }
